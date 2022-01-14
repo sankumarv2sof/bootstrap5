@@ -1,0 +1,39 @@
+/**
+ * Components > Hero
+ */
+
+.hero {
+    @include hero();
+
+    &--primary {
+        @include hero-variant($valhalla, $hero-inset: 6px);
+    }
+
+    &--secondary {
+        @include hero-variant(hotpink, $hero-inset: 2px);
+    }
+
+    &--light {
+        @include hero-variant($gray-500, $hero-inset: 12px);
+    }
+
+    &__heading {
+        font-weight: $font-weight-bold;
+    }
+    &__lead {
+        font-size: 1.25rem;
+        margin-bottom: $spacer * 3;
+    }
+
+    @include media-breakpoint-up(xl) {
+        &__wrapper {
+            @include make-row();
+        }
+
+        &__main {
+            @include make-col-ready();
+            @include make-col(8);
+        }
+    }
+}
+
